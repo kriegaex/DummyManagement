@@ -1,6 +1,7 @@
 package com.dummy.dummydmanagement.service;
 
 import com.dummy.dummydmanagement.model.Item;
+import com.jayway.blog.YourAnnotation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +35,9 @@ public class ItemService {
     @Qualifier("jdbcScheduler")
     private Scheduler jdbcScheduler;
 
-
+    @YourAnnotation(isRun = true)
     public Flux<Item> getAllItemsService() throws Exception {
-       // int s = 5/0;
+        int s = 5/0;
         // throw new Exception();
 //        logger.info("*** Inside getAllItems service ***");
         Flux<Item> defer = Flux.defer(() -> Flux.fromIterable(items));
